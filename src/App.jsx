@@ -22,13 +22,7 @@ function ListView(props) {
   const {product} = props;
   return (
     <div>
-      <img
-        className="ListView"
-        src={product.img}
-      /> 
-      <div className="Name">{product.name}</div>
-      <div className="Price">{product.price}</div>
-      <div className="Color">{product.color}</div>
+      <div className="List">{product.name },    {product.price},    {product.color}</div>
     </div>
   );  
 }
@@ -91,11 +85,9 @@ class Store extends Component{
               isToggleOn: !state.isToggleOn
             }))}}
           />
-                                             
-          <CardView product = {this.products[0]} />
-          <CardView product = {this.products[1]} />
-          <CardView product = {this.products[2]} />
-          <CardView product = {this.products[3]} />
+          {this.products.map(product => (                                   
+            <CardView product = {product} />                                   
+          ))} 
         </div>
       );  
     }else{
@@ -107,8 +99,9 @@ class Store extends Component{
               isToggleOn: !state.isToggleOn
             }))}} 
           />  
-           <ListView product = {this.products[4]} />        
-           <ListView product = {this.products[5]} />    
+          {this.products.map(product => (                                   
+            <ListView product = {product} />
+          ))}   
         </div>
       );
     }
