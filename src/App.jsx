@@ -12,7 +12,7 @@ function CardView(props) {
         src={product.img}
       /> 
       <div className="Name">{product.name}</div>
-      <div className="Price">{product.price}</div>
+      <div className="Price">${product.price}</div>
       <div className="Color">{product.color}</div>
     </div>
   );  
@@ -22,7 +22,7 @@ function ListView(props) {
   const {product} = props;
   return (
     <div>
-      <div className="List">{product.name },    {product.price},    {product.color}</div>
+      <div key={product.name}  className="List"> {product.name } ,  $ {product.price} ,    {product.color}</div>
     </div>
   );  
 }
