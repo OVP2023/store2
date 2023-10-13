@@ -106,8 +106,8 @@ class Store extends Component{
               isToggleOn: !state.isToggleOn
             }))}}
           />
-          {this.products.map(product => (                                   
-            <CardView product = {product} />                                   
+          {this.products.map((product,index) => (                                   
+            <CardView key={index} product = {product} />                                   
           ))} 
         </div>
       );  
@@ -120,8 +120,8 @@ class Store extends Component{
               isToggleOn: !state.isToggleOn
             }))}} 
           />  
-          {this.products.map(product => (                                   
-            <ListView product = {product} />
+          {this.products.map((product,index) => (                                   
+            <ListView key={index} product = {product} />
           ))}   
         </div>
       );
